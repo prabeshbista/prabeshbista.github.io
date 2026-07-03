@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Prabesh Bista </title>
+  <title>Prabesh Bista</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,6 +26,41 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom accent + pull-quote styling -->
+  <style>
+    :root { --accent: #4b3ff2; }
+    .section-title h2::after { background: var(--accent) !important; }
+    #about .content a,
+    #resume .resume-item a,
+    #services a,
+    .about a { color: var(--accent); }
+    .research-statement {
+      border-left: 4px solid var(--accent);
+      background: rgba(75, 63, 242, 0.05);
+      padding: 24px 28px;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+    .research-statement p.lead {
+      font-size: 19px;
+      font-style: italic;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+    }
+    .research-statement .tags {
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.3px;
+    }
+    .hero-tagline {
+      font-size: 19px;
+      color: #6f6f6f;
+      margin-top: 6px;
+      max-width: 560px;
+    }
+    .section-title h2 i { color: var(--accent); margin-right: 8px; }
+  </style>
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -77,7 +112,8 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Prabesh Bista</h1>
-      <p>I'm <span class="typed" data-typed-items="an aspiring experimental Physicist"></span></p>
+      <p>I'm <span class="typed" data-typed-items="an experimental physicist, an ultrafast spectroscopist, a photoemission researcher"></span></p>
+      <p class="hero-tagline">Building next-generation light sources to capture how matter moves, one femtosecond at a time.</p>
     </div>
   </section><!-- End Hero -->
 
@@ -88,7 +124,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>About me</h2>
+          <h2><i class='bx bx-user'></i>About Me</h2>
 
 
         </div>
@@ -99,18 +135,30 @@
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>My Story</h3>
-            <p >
-                      Hi! It's me Prabesh Bista hailing from Nepal. I grew up in Kathmandu. I did my undergraduate at Tribhuvan University. After completing my undergraduate, I went to Taiwan for internship. Ultimately, I worked as a Research Assistant for a year at <a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank">Dr. Cheng-Tien Chiang's lab</a> . I also did my master's thesis at Chiang's group. I built a non-collinear optical parametric amplifier from scratch that is used as a light source for photoelectron spectroscopy.
-
-          Currently, I am a PhD student in <a href="https://allisongroup.net/" target="_blank">Prof. Thomas Allison's lab</a> . My current works involve in designing and constructing an experiment and analyzing the data. Besides doing experiment I will be doing these activities like reading newspaper and non-fiction books, hiking, playing football, cycling, traveling, watching documenteries and movies, and cooking food.
+            <p>
+              <strong>From Kathmandu to the lab bench.</strong> I grew up in Kathmandu, Nepal, and completed my undergraduate degree in Physics at Tribhuvan University. That path led me to Taiwan, where an internship turned into a year as a Research Assistant — and later a master's thesis — in <a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank">Dr. Cheng-Tien Chiang's lab</a> at Academia Sinica. There, I built a non-collinear optical parametric amplifier (NOPA) from scratch, engineering it into a working light source for photoelectron spectroscopy.
             </p>
-
-              
+            <p>
+              <strong>Now, at Stony Brook.</strong> I'm currently a PhD student in <a href="https://allisongroup.net/" target="_blank">Prof. Thomas Allison's lab</a>, where I design and build ultrafast experiments and turn the data they produce into physical insight — work at the intersection of instrumentation and discovery.
+            </p>
+            <p>
+              Outside the lab, I read non-fiction and the news, hike, play football, cycle, travel, and cook — the same curiosity that shows up in the lab too.
+            </p>
           </div>
         </div>
 
       </div>
     </section><!-- End About Section -->
+
+    <!-- ======= Research Statement Section ======= -->
+    <section id="research-statement" class="about">
+      <div class="container">
+        <div class="research-statement" data-aos="fade-up">
+          <p class="tags">ULTRAFAST SPECTROSCOPY &middot; ULTRAFAST PHENOMENA &middot; LIGHT&ndash;MATTER INTERACTION</p>
+          <p class="lead">I build the optical tools that let us watch electrons move — designing light sources and experiments that resolve dynamics on femtosecond timescales.</p>
+        </div>
+      </div>
+    </section><!-- End Research Statement Section -->
 
 
     
@@ -120,13 +168,13 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>CV</h2>
-          <p>View My CV at <a href="Bista_CV.pdf"  target="_blank">here.</a> </p>
+          <h2><i class='bx bx-file-blank'></i>Curriculum Vitae</h2>
+          <p>You can view my CV <a href="Bista_CV.pdf" target="_blank">here</a>.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
+            <h3 class="resume-title">Summary</h3>
             <div class="resume-item pb-0">
               <h4>Prabesh Bista</h4>
               
@@ -141,57 +189,56 @@
 
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
-              <h4>Graduate student ; Physics</h4>
+              <h4>Graduate Student, Physics</h4>
               <h5>2026 - present</h5>
               <p><em>Stony Brook University, New York, USA</em></p>
             </div>
             <div class="resume-item">
-              <h4>Master of Science ; Physics</h4>
+              <h4>Master of Science, Physics</h4>
               <h5>2021 - 2024</h5>
               <p><em>National Central University, Zhongli, Taiwan</em></p>
               <p> Thesis: Non-collinear optical parametric amplification as a light source for photoemission spectroscopy.</p>
               <p>Advisor: <a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank">Dr. Cheng-Tien Chiang</a> </p>
             </div>
             <div class="resume-item">
-              <h4>Bachelor of Science ; Physics</h4>
+              <h4>Bachelor of Science, Physics</h4>
               <h5>2015 - 2019</h5>
               <p><em>Tri-Chandra Multiple Campus, Kathmandu, Nepal</em></p>
               <p>Minor in Mathematics</p>
             </div>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title"> Research Experience</h3>
+            <h3 class="resume-title">Research Experience</h3>
             <div class="resume-item">
               <h4>Research Internship</h4>
               <h5>October 2025 - May 2026</h5>
-              <p><em><a href="https://spqm.pages.ist.ac.at/" target="_blank">Sunko Group</a> , Institute of Science and Technology Austria,  Klosterneuburg, Austria</em></p>
+              <p><em><a href="https://spqm.pages.ist.ac.at/" target="_blank">Sunko Group</a>, Institute of Science and Technology Austria, Klosterneuburg, Austria</em></p>
               <ul>
-                <li>Building an optical setup for time-resolve magneto-optical Kerr effect.</li>
+                <li>Building an optical setup for time-resolved magneto-optical Kerr effect measurements.</li>
               </ul>
               <h5>December 2024 - May 2025</h5>
-              <p><em><a href="https://ultrafast.pages.ist.ac.at/" target="_blank">Baykusheva Group</a> , Institute of Science and Technology Austria,  Klosterneuburg, Austria</em></p>
+              <p><em><a href="https://ultrafast.pages.ist.ac.at/" target="_blank">Baykusheva Group</a>, Institute of Science and Technology Austria, Klosterneuburg, Austria</em></p>
               <ul>
                 <li>Built a non-degenerate parametric down-conversion setup using a nonlinear crystal.</li>
                 <li>Developed LabVIEW program for Ophir powermeter.</li>
-                <li>Measured beam point stability .</li>           
+                <li>Measured beam pointing stability.</li>           
               </ul>
             </div>
             <div class="resume-item">
               <h4>Master Project</h4>
               <h5>2021 - 2024</h5>
-              <p><em>Institute of Atomic and Molecular Sciences , Academia Sinica, Taipei  </em></p>
+              <p><em>Institute of Atomic and Molecular Sciences, Academia Sinica, Taipei </em></p>
               <ul>
-                <li>Constructed a non-collinear optical parametric amplification from scratch.</li>
-                <li>Engaged in the investigation of the electronic structure of bulk NiTe<sub>2</sub> using ARPES. </li>              
+                <li>Constructed a non-collinear optical parametric amplifier (NOPA) from scratch, achieving ~30% conversion efficiency in second-harmonic generation.</li>            
               </ul>
             </div>
             <div class="resume-item">
               <h4>Research Assistant</h4>
               <h5>2020 - 2021</h5>
-              <p><em><a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank">Chiang group</a>, Institute of Atomic and Molecular Sciences , Academia Sinica, Taipei  </em></p>
+              <p><em><a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank">Chiang group</a>, Institute of Atomic and Molecular Sciences, Academia Sinica, Taipei </em></p>
               <ul>
-                <li>Generated second and third harmonic signals in nonlinear optical experiments.</li>
-                <li>Developed LabVIEW program for THORLABS PM100D powermeter. </li>
+                <li>Generated second- and third-harmonic signals in nonlinear optical experiments.</li>
+                <li>Developed a LabVIEW program for a Thorlabs PM100D power meter.</li>
                 <li>Procured laboratory components and assisted in lab setup.</li>
                               
               </ul>
@@ -199,9 +246,9 @@
             <div class="resume-item">
               <h4>Research Internship</h4>
               <h5>March - July 2020</h5>
-              <p><em>Institute of Atomic and Molecular Sciences , Academia Sinica, Taipei</em></p>
+              <p><em>Institute of Atomic and Molecular Sciences, Academia Sinica, Taipei</em></p>
               <ul>
-                <li>Used Kelvin probe spectroscopy and Ambient-photoemission spectroscopy to find out the valence band of 2D materials.</li>
+                <li>Used Kelvin probe spectroscopy and ambient-pressure photoemission spectroscopy to determine the valence band of 2D materials.</li>
          
               </ul>
             </div>
@@ -216,17 +263,10 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Research Interest</h2>
-          <p>
-            <ul>
-          <li>Ultrafast Spectroscopy</li>
-          <li>Ultrafast Phenomena</li>
-          <li>Light-matter interaction</li>
-        </ul>
-          </p>
+          <h2><i class='bx bx-flask'></i>Featured Research</h2>
         </div>
 
-         <p> The section below highlights my contributions to setting up the laboratory, as well as my past and current research projects.</p>
+         <p>A look at my hands-on contributions to laboratory instrumentation, alongside past and current research projects.</p>
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
@@ -256,7 +296,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/optical-table.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/optical-table.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=" A design of Optical table's cover from SolidWorks "><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/optical-table.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design of an optical table cover, modeled in SolidWorks"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details2.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
@@ -278,7 +318,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/WS2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/WS2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Hexagonal lattice structure of Tungesten Disulphide"><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/WS2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Hexagonal lattice structure of tungsten disulfide"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details3.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
@@ -294,18 +334,18 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Publication</h2>
+          <h2><i class='bx bx-book-open'></i>Publications</h2>
           <h3>2026</h3>
           <p>
-           <a href="https://pubs.aip.org/aip/apl/article/128/3/031601/3377623/Valence-band-momentum-imaging-of-NiTe2-by-two"target="_blank">Valence Band Momentum Imaging of NiTe<sub>2</sub> by Two-Photon Photoemission Momentum Microscopy</a> </p>
+           <a href="https://pubs.aip.org/aip/apl/article/128/3/031601/3377623/Valence-band-momentum-imaging-of-NiTe2-by-two" target="_blank" rel="noopener noreferrer">Valence Band Momentum Imaging of NiTe<sub>2</sub> by Two-Photon Photoemission Momentum Microscopy</a></p>
           <p>
             Mukesh Singh, <b>Prabesh Bista</b>, Yu-Chan Lin, Chia-Nung Kuo, Yu-Jhen Chuang, Maximilian Paleschke, Chen-Bin Huang, Ming-Chiang Chung, Chin-Shan Lue, and Cheng-Tien Chiang</p> <p>Appl. Phys. Lett., <b>128</b>, 031601, 2026</p>
           <h3>2022</h3>
 
            <p> 
-             <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03064" target="_blank">Photoluminescence of Nitrogen-Vacancy Centers by Ultraviolet One- and Two-Photon Excitation of Fluorescent Nanodiamonds</a></p>
+             <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03064" target="_blank" rel="noopener noreferrer">Photoluminescence of Nitrogen-Vacancy Centers by Ultraviolet One- and Two-Photon Excitation of Fluorescent Nanodiamonds</a></p>
                <p> Teng-I Yang, Yu-Wen Huang, <b>Prabesh Bista</b>, Chien-Fang Ding, Jeson Chen, Cheng-Tien Chiang, and Huan-Cheng Chang</p>
-               <p> J. Phys. Chem. Lett.,  <b>13</b> , 11280–11287, 2022</p>
+               <p> J. Phys. Chem. Lett., <b>13</b>, 11280–11287, 2022</p>
         </div>
 
         
@@ -318,8 +358,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Gallery</h2>
-          <p>In this section, you will find photos of me from conferences, travels, and outreach programs.</p>
+          <h2><i class='bx bx-images'></i>Gallery</h2>
+          <p>A few photos from conferences, workshops, and summer schools along the way.</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -329,7 +369,7 @@
               <div class="testimonial-item" data-aos="fade-up">
                 <p>
                   
-                  Presenting a poster during the <a href="https://www.iams.sinica.edu.tw/iams_yfrp/home" target="_blank">IAMS Young Fellow Research Presentation</a> at IAMS, Academia Sinica, Taipei, in 2022. 
+                  Presenting a poster during the <a href="https://www.iams.sinica.edu.tw/iams_yfrp/home" target="_blank" rel="noopener noreferrer">IAMS Young Fellow Research Presentation</a> at IAMS, Academia Sinica, Taipei, in 2022. 
                   
                 </p>
                 <img src="assets/img/testimonials/workshop-IAMS.jpg" class="testimonial-img" alt="">
@@ -338,25 +378,22 @@
               </div>
             </div><!-- End testimonial item -->
 
+            <!--
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
                 <p>
-                  
-                  Exploring the Pakistan Monument Museum along with Scientists from the USA, Europe and Pakistan during our <a href="https://www.ncp.edu.pk/iwtd-2018.php" target="_blank"> workshop </a> in Islamabad, Pakistan, in 2018.
-                  
+                  Exploring the Pakistan Monument Museum along with scientists from the USA, Europe, and Pakistan during our <a href="https://www.ncp.edu.pk/iwtd-2018.php" target="_blank"> workshop </a> in Islamabad, Pakistan, in 2018.
                 </p>
                 <img src="assets/img/testimonials/pakistan2018.JPG" class="testimonial-img" alt="">
                 <h4>Pakistan Monument Museum</h4>
-                
               </div>
             </div><!-- End testimonial item -->
+            -->
 
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up">
                 <p>
-                  
-                  Attending the International Workshop on <a href="https://indico.phys.sinica.edu.tw/event/86/" target="_blank">Transport and Optics in Topological Systems</a> at the Institute of Physics, Academia Sinica, Taipei, Taiwan, in 2024.
-                  
+                  Attending the International Workshop on <a href="https://indico.phys.sinica.edu.tw/event/86/" target="_blank" rel="noopener noreferrer">Transport and Optics in Topological Systems</a> at the Institute of Physics, Academia Sinica, Taipei, Taiwan, in 2024.
                 </p>
                 <img src="assets/img/testimonials/tots.jpg" class="testimonial-img" alt="">
                 <h4> IoP, Academia Sinica</h4>
@@ -368,7 +405,7 @@
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                 <p>
                   
-                  Participating in <a href="https://school-2d-vdw.sciencesconf.org/" target="_blank">Advanced physics of Van der Waals hetero-structure summer school</a> in France, 2023 .
+                  Participating in the <a href="https://school-2d-vdw.sciencesconf.org/" target="_blank" rel="noopener noreferrer">Advanced Physics of Van der Waals Heterostructures summer school</a> in France, 2023.
                   
                 </p>
                 <img src="assets/img/testimonials/group_photo_202309.jpeg" class="testimonial-img" alt="">
@@ -382,12 +419,12 @@
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                 <p>
                   
-                  A group photo with the organizing team after the successful completion of the science exhibition at Patan Campus, Lalitpur, Nepal in 2018.
+                  A group photo taken during the <a href="https://usd2026.org/" target="_blank" rel="noopener noreferrer">Ultrafast Surface Dynamics conference</a> in 2026.
                   
                 </p>
-                <img src="assets/img/testimonials/science-exhibition.JPG" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/USD2026.JPEG" class="testimonial-img" alt="">
 
-                <h4> Patan, Lalitpur, Nepal</h4> 
+                <h4>New Hampshire, USA</h4> 
               </div>  
 
              </div><!-- End testimonial item -->
@@ -405,8 +442,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2> Blog</h2>
-          <p>Coming soon..</p>
+          <h2><i class='bx bx-edit-alt'></i>Blog</h2>
+          <p>Coming soon.</p>
         </div>
 
         
@@ -419,8 +456,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
-          
+          <h2><i class='bx bx-envelope'></i>Contact</h2>
+          <p>Working on ultrafast spectroscopy, photoemission instrumentation, or anything at the intersection of light and matter? I'd love to hear from you.</p>
         </div>
 
         <div class="row" data-aos="fade-in" >
@@ -436,7 +473,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>prabesh.bista@stonybrook.edu</p>
+                <p><a href="mailto:prabesh.bista@stonybrook.edu">prabesh.bista@stonybrook.edu</a></p>
               </div>
 
               <iframe 

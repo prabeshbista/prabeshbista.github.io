@@ -27,6 +27,13 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom accent styling (matches homepage) -->
+  <style>
+    :root { --accent: #4b3ff2; }
+    .portfolio-description a { color: var(--accent); }
+    .portfolio-description h4 { color: var(--accent); margin-top: 24px; }
+  </style>
+
   <!-- =======================================================
   * Template Name: iPortfolio
   * Updated: Jul 27 2023 with Bootstrap v5.3.1
@@ -80,10 +87,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Laboratory Setup</h2>
+          <h2>Optical Table Cover &amp; LabVIEW Control</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Lab Setup Details</li>
+            <li>Lab Instrumentation</li>
           </ol>
         </div>
 
@@ -98,7 +105,7 @@
 
       <div class="col-lg-8 offset-lg-2">
         <div class="portfolio-description">
-          <h2>Optical table's Cover & LabVIEW Program</h2>
+          <h2>Optical Table Cover &amp; LabVIEW Instrument Control</h2>
           <div class="portfolio-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
               <div class="swiper-slide text-center">
@@ -130,11 +137,11 @@
             <div class="swiper-pagination"></div>
           </div>
           <p>
-            The optical components mounted on the optical table remain stable with minimum deflection so that the alignment of the laser path is unchanged. To prevent optical components from dust, and stray light , a cover box is needed. I designed and assembled the cover box for the optical table. I used SOLIDWORKS for designing.  
+            Precision optics need a stable, contamination-free environment — even minor drift or stray light can throw off alignment. I designed and built a custom enclosure to shield the optical table from dust and stray light, modeling it in SolidWorks for a precise fit around existing hardware.
           </p>
 
           <p>
-            LabVIEW is the commonly used graphical programming to control the hardware. The power meter when connected to the computer needs software to display the output. I used LabVIEW to develop the program for Thorlabs PM100D powermeter.You can view my code at <a href=" https://github.com/prabeshbista/Labview_program " target='_blank' > here.</a>
+            To bring the hardware online, I also developed a LabVIEW control program for a Thorlabs PM100D power meter — giving the setup a working software interface for real-time power monitoring. <a href="https://github.com/prabeshbista/Labview_program" target="_blank" rel="noopener noreferrer">View the code on GitHub &rarr;</a>
           </p>
 
 
