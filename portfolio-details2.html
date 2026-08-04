@@ -1,182 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Prabesh Bista</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/mypic2.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Custom accent styling (matches homepage) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optical Table Cover & LabVIEW Instrument Control — Prabesh Bista</title>
+  <meta name="description" content="A custom SolidWorks enclosure to shield an optical table from dust and stray light, plus a LabVIEW control program for real-time power monitoring.">
+  <meta name="author" content="Prabesh Bista">
+  <meta name="theme-color" content="#0B0F17">
+  <link rel="canonical" href="https://prabeshbista.github.io/portfolio-details2.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Optical Table Cover & LabVIEW Instrument Control — Prabesh Bista">
+  <meta property="og:description" content="A custom SolidWorks enclosure to shield an optical table from dust and stray light, plus a LabVIEW control program for real-time power monitoring.">
+  <meta property="og:image" content="https://prabeshbista.github.io/assets/img/mypic2.jpg">
+  <link rel="icon" href="assets/img/mypic2.jpg">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.className='js';</script>
   <style>
-    :root { --accent: #4b3ff2; }
-    .portfolio-description a { color: var(--accent); }
-    .portfolio-description h4 { color: var(--accent); margin-top: 24px; }
+    :root{
+      --ink:#0B0F17; --ink-2:#0E1320; --panel:#141A28;
+      --paper:#F5F6F9; --surface:#FFFFFF;
+      --line:#E4E7EE; --line-2:#EEF0F5; --line-dark:rgba(255,255,255,.09);
+      --text:#0E1420; --muted:#5A6472; --muted-2:#8A93A2; --rail-tx:#C7CEDB;
+      --accent:#5B4BE0; --accent-2:#22C7E6; --violet:#7A5CFF;
+      --grad:linear-gradient(90deg,#7A5CFF 0%,#5B7CFF 46%,#22C7E6 100%);
+      --shadow:0 1px 2px rgba(16,20,32,.05),0 10px 30px -16px rgba(16,20,32,.18);
+      --shadow-lg:0 30px 70px -28px rgba(12,16,24,.5);
+      --rail-w:300px; --maxw:820px;
+      --f-disp:'Space Grotesk',system-ui,sans-serif;
+      --f-body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+      --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--paper);color:var(--text);font-family:var(--f-body);
+      font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--accent);text-decoration:none;transition:color .2s var(--ease)}
+    a:hover{color:var(--violet)}
+    img{max-width:100%;display:block}
+    h1,h2,h3,h4{font-family:var(--f-disp);font-weight:600;line-height:1.12;letter-spacing:-.02em;margin:0}
+    p{margin:0 0 1.05em}
+    ::selection{background:rgba(122,92,255,.22)}
+    :focus-visible{outline:2.5px solid var(--violet);outline-offset:3px;border-radius:3px}
+    .ic{width:1em;height:1em;display:inline-block;vertical-align:-.12em;flex:none}
+
+    .rail{position:fixed;inset:0 auto 0 0;width:var(--rail-w);z-index:40;background:var(--ink);
+      color:var(--rail-tx);border-right:1px solid var(--line-dark);display:flex;flex-direction:column;
+      padding:34px 30px 24px;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.4px);
+      background-size:20px 20px;background-position:center top}
+    .rail::after{content:"";position:absolute;top:0;right:-1px;width:1px;height:100%;
+      background:linear-gradient(180deg,transparent,rgba(122,92,255,.55),rgba(34,199,230,.35),transparent)}
+    .brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .avatar{position:relative;width:118px;height:118px;border-radius:50%;padding:3px;background:var(--grad);
+      box-shadow:0 12px 34px -14px rgba(122,92,255,.7)}
+    .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--ink)}
+    .brand h1{margin:18px 0 2px;font-size:24px;color:#fff}.brand h1 a{color:#fff}
+    .brand .kicker{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-top:2px}
+    .socials{display:flex;gap:9px;margin-top:16px}
+    .socials a{width:36px;height:36px;display:grid;place-items:center;border-radius:9px;color:var(--rail-tx);
+      background:rgba(255,255,255,.05);border:1px solid var(--line-dark);font-size:16px;transition:.22s var(--ease)}
+    .socials a:hover{color:#fff;background:rgba(122,92,255,.22);border-color:rgba(122,92,255,.6);transform:translateY(-2px)}
+    .nav{margin-top:30px}.nav ul{list-style:none;margin:0;padding:0}
+    .nav a{display:flex;align-items:center;gap:13px;padding:10px 12px;border-radius:9px;color:var(--rail-tx);
+      font-size:14.5px;font-weight:500;transition:.2s var(--ease)}
+    .nav a .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;flex:none;transition:.2s var(--ease)}
+    .nav a .num{font-family:var(--f-mono);font-size:11px;color:var(--muted-2);width:20px}
+    .nav a:hover{color:#fff;background:rgba(255,255,255,.04)}
+    .rail-foot{margin-top:auto;padding-top:22px;border-top:1px solid var(--line-dark);
+      font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;color:var(--muted-2);line-height:1.7}
+    .rail-foot b{color:var(--rail-tx);font-weight:500}
+
+    .content{margin-left:var(--rail-w);min-height:100vh;display:flex;flex-direction:column}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;width:100%}
+
+    .crumbs{border-bottom:1px solid var(--line);background:var(--surface)}
+    .crumbs .wrap{display:flex;align-items:center;gap:10px;padding-top:18px;padding-bottom:18px;
+      font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--muted-2)}
+    .crumbs a{color:var(--muted)}.crumbs .sep{opacity:.5}
+
+    .phead{padding:70px 0 40px}
+    .phead .ey{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+    .phead .ey::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--grad)}
+    .phead h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.03em}
+
+    .viewer{margin:0 0 8px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+      background:var(--ink);box-shadow:var(--shadow-lg);position:relative}
+    .viewer .grid-tex{position:absolute;inset:0;opacity:.5;pointer-events:none;
+      background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.4px);background-size:22px 22px}
+    .vtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+      -ms-overflow-style:none;scrollbar-width:none}
+    .vtrack::-webkit-scrollbar{display:none}
+    .vslide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;
+      height:460px;padding:26px;position:relative;z-index:1}
+    .vslide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+    .vbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.16);background:rgba(11,15,23,.55);backdrop-filter:blur(8px);
+      color:#fff;font-size:20px;display:grid;place-items:center;cursor:pointer;transition:.2s var(--ease)}
+    .vbtn:hover{background:var(--accent);border-color:var(--accent)}
+    .vprev{left:16px}.vnext{right:16px}
+    .dots{display:flex;gap:8px;justify-content:center;margin:18px 0 0}
+    .dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0;transition:.2s var(--ease)}
+    .dots button.on{background:var(--grad);width:26px;border-radius:5px}
+
+    .prose{padding:44px 0 30px;font-size:17px;color:#242c3a}
+    .prose h4{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--accent);margin:30px 0 14px}
+    .prose strong{font-weight:600;color:var(--text)}
+    .prose ol{counter-reset:step;list-style:none;margin:0 0 1.2em;padding:0}
+    .prose ol li{position:relative;padding:0 0 16px 52px;margin:0}
+    .prose ol li::before{counter-increment:step;content:counter(step,decimal-leading-zero);
+      position:absolute;left:0;top:0;font-family:var(--f-mono);font-size:13px;font-weight:600;color:#fff;
+      width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--ink)}
+    .prose ol li::after{content:"";position:absolute;left:16.5px;top:38px;bottom:2px;width:1px;background:var(--line)}
+    .prose ol li:last-child::after{display:none}
+    .attrib{margin-top:26px;padding:16px 20px;border-left:4px solid var(--accent);background:rgba(122,92,255,.06);
+      border-radius:0 10px 10px 0;font-size:14.5px;color:var(--muted)}
+    .attrib em{font-style:normal}
+    .ghlink{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:13.5px;
+      padding:11px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);margin-top:6px;transition:.2s var(--ease)}
+    .ghlink:hover{border-color:var(--accent);background:rgba(122,92,255,.06)}
+
+    .backbar{margin-top:auto;border-top:1px solid var(--line);background:var(--surface)}
+    .backbar .wrap{padding-top:24px;padding-bottom:24px}
+    .backlink{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-disp);font-weight:500;color:var(--text)}
+    .backlink:hover{color:var(--accent)}
+
+    footer.site{margin-left:var(--rail-w);border-top:1px solid var(--line);background:var(--surface)}
+    footer.site .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px;gap:16px;flex-wrap:wrap}
+    footer.site .cp{font-size:13.5px;color:var(--muted)}footer.site .cp b{font-family:var(--f-disp);color:var(--text)}
+    footer.site .mono{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;color:var(--muted-2)}
+
+    .totop{position:fixed;right:26px;bottom:26px;z-index:50;width:46px;height:46px;border-radius:12px;background:var(--ink);
+      color:#fff;border:1px solid var(--line-dark);display:grid;place-items:center;font-size:20px;cursor:pointer;
+      opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--ease)}
+    .totop.show{opacity:1;pointer-events:auto;transform:none}.totop:hover{background:var(--accent)}
+    .mtop{display:none}
+
+    .js [data-reveal]{opacity:0;transform:translateY(16px)}
+    .js [data-reveal].in{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+
+    @media (max-width:1080px){
+      :root{--rail-w:0px}
+      .rail{position:fixed;inset:0 0 auto 0;width:100%;height:auto;flex-direction:row;align-items:center;
+        justify-content:space-between;padding:14px 20px;background-image:none;border-right:0;border-bottom:1px solid var(--line-dark)}
+      .rail::after{display:none}
+      .brand{flex-direction:row;gap:12px;text-align:left}
+      .avatar{width:46px;height:46px;padding:2px}.avatar img{border-width:2px}
+      .brand h1{margin:0;font-size:18px}.brand .kicker{display:none}.socials{display:none}
+      .nav{position:fixed;inset:66px 0 auto 0;margin:0;background:var(--ink);padding:14px 20px 22px;
+        border-bottom:1px solid var(--line-dark);transform:translateY(-140%);transition:transform .4s var(--ease);max-height:80vh;overflow:auto}
+      .nav.open{transform:none}.nav a{padding:13px 12px}.nav a .num{display:none}.rail-foot{display:none}
+      .mtop{display:grid;place-items:center;width:44px;height:44px;border-radius:10px;border:1px solid var(--line-dark);
+        background:rgba(255,255,255,.05);color:#fff;font-size:22px;cursor:pointer}
+      .content,footer.site{margin-left:0}.content{padding-top:66px}
+      .phead{padding:48px 0 30px}
+    }
+    @media (max-width:520px){.wrap{padding:0 22px}.vslide{height:320px;padding:16px}.prose{font-size:16px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.js [data-reveal]{opacity:1;transform:none}}
   </style>
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/mypic2.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Prabesh Bista</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href= "https://twitter.com/prabeshbista4" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>           
-        <a href="https://www.instagram.com/prabesh.bista1/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-              
-        <a href= "https://www.linkedin.com/in/prabesh-bista-869678132/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href= "https://github.com/prabeshbista" target="_blank"><i class="bi bi-github"></i></a>
-
-
-        </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.53C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.79 2.74 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.42.36.8 1.08.8 2.18v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevL" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-chevR" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M20 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4"/></symbol>
+  </svg>
+  <header class="rail" id="rail">
+    <div class="brand">
+      <div class="avatar"><img src="assets/img/mypic2.jpg" alt="Portrait of Prabesh Bista"></div>
+      <h1><a href="index.html">Prabesh Bista</a></h1>
+      <div class="kicker">Ultrafast Physics</div>
+      <div class="socials">
+        <a href="https://twitter.com/prabeshbista4" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><svg class="ic"><use href="#i-x"/></svg></a>
+        <a href="https://www.linkedin.com/in/prabesh-bista-869678132/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/prabeshbista" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
       </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About me</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>CV</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Research</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Publication</span></a></li>
-          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Gallery</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
     </div>
-  </header><!-- End Header -->
+    <button class="mtop" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#hero"><span class="num">01</span><span class="dot"></span>Home</a></li>
+        <li><a href="index.html#about"><span class="num">02</span><span class="dot"></span>About me</a></li>
+        <li><a href="index.html#cv"><span class="num">03</span><span class="dot"></span>CV</a></li>
+        <li><a href="index.html#research" class="active"><span class="num">04</span><span class="dot"></span>Research</a></li>
+        <li><a href="index.html#publications"><span class="num">05</span><span class="dot"></span>Publication</a></li>
+        <li><a href="index.html#gallery"><span class="num">06</span><span class="dot"></span>Gallery</a></li>
+        <li><a href="index.html#contact"><span class="num">07</span><span class="dot"></span>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="rail-foot"><b>Allison Group</b><br>Stony Brook University<br>Long Island, NY</div>
+  </header>
+  <main class="content" id="main">
 
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Optical Table Cover &amp; LabVIEW Control</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Lab Instrumentation</li>
-          </ol>
-        </div>
-
+    <section class="crumbs">
+      <div class="wrap">
+        <a href="index.html">Home</a><span class="sep">/</span><span>Lab Instrumentation</span>
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
 
-    <!-- ======= Portfolio 1 ======= -->
-<section id="portfolio-details" class="portfolio-details">
-  <div class="container">
+    <div class="wrap">
+      <header class="phead" data-reveal>
+        <span class="ey">Laboratory Setup</span>
+        <h1>Optical Table Cover &amp; LabVIEW Instrument Control</h1>
+      </header>
 
-    <div class="row gy-4">
-
-      <div class="col-lg-8 offset-lg-2">
-        <div class="portfolio-description">
-          <h2>Optical Table Cover &amp; LabVIEW Instrument Control</h2>
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide text-center">
-                <img src="assets/img/portfolio/PM100D.jpg" class="img-fluid" alt="" style="width: 40%;">
-              </div> 
-
-
-              <div class="swiper-slide text-center">
-                  <img src="assets/img/portfolio/optical-table-design.JPG" alt="">
-              </div>
-
-              <div class="swiper-slide text-center">
-                  <img src="assets/img/portfolio/optical-table.JPG" alt="">
-              </div>
-
-              <div class="swiper-slide text-center">
-                  <img src="assets/img/portfolio/table_frame2.JPG" alt="">
-              </div>              
-
-              <div class="swiper-slide text-center">
-                  <img src="assets/img/portfolio/table_frame1.JPG" alt="">
-              </div>
-
-
-
-
-
-             </div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <p>
-            Precision optics need a stable, contamination-free environment — even minor drift or stray light can throw off alignment. I designed and built a custom enclosure to shield the optical table from dust and stray light, modeling it in SolidWorks for a precise fit around existing hardware.
-          </p>
-
-          <p>
-            To bring the hardware online, I also developed a LabVIEW control program for a Thorlabs PM100D power meter — giving the setup a working software interface for real-time power monitoring. <a href="https://github.com/prabeshbista/Labview_program" target="_blank" rel="noopener noreferrer">View the code on GitHub &rarr;</a>
-          </p>
-
-
-           
-
-        </div>
+      <div class="viewer" data-reveal>
+      <div class="grid-tex"></div>
+      <div class="vtrack" id="vtrack">
+        <div class="vslide"><img src="assets/img/portfolio/PM100D.jpg" alt="Thorlabs PM100D power meter" loading="lazy" decoding="async"></div>
+        <div class="vslide"><img src="assets/img/portfolio/optical-table-design.JPG" alt="Optical table cover design in SolidWorks" loading="lazy" decoding="async"></div>
+        <div class="vslide"><img src="assets/img/portfolio/optical-table.JPG" alt="Optical table with custom cover" loading="lazy" decoding="async"></div>
+        <div class="vslide"><img src="assets/img/portfolio/table_frame2.JPG" alt="Optical table frame detail" loading="lazy" decoding="async"></div>
+        <div class="vslide"><img src="assets/img/portfolio/table_frame1.JPG" alt="Optical table frame" loading="lazy" decoding="async"></div>
       </div>
+      <button class="vbtn vprev" id="vprev" aria-label="Previous image"><svg class="ic"><use href="#i-chevL"/></svg></button>
+      <button class="vbtn vnext" id="vnext" aria-label="Next image"><svg class="ic"><use href="#i-chevR"/></svg></button>
+    </div>
+    <div class="dots" id="dots"></div>
 
+      <div class="prose" data-reveal>
+        <p>
+          Precision optics need a stable, contamination-free environment — even minor drift or stray light can throw off alignment. I designed and built a custom enclosure to shield the optical table from dust and stray light, modeling it in SolidWorks for a precise fit around existing hardware.
+        </p>
+        <p>
+          To bring the hardware online, I also developed a LabVIEW control program for a Thorlabs PM100D power meter — giving the setup a working software interface for real-time power monitoring.
+        </p>
+        <a class="ghlink" href="https://github.com/prabeshbista/Labview_program" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-github"/></svg> View the code on GitHub <svg class="ic"><use href="#i-ext"/></svg></a>
+      </div>
     </div>
 
-  </div>
-</section>
-<!-- End Portfolio 1 -->
+    <div class="backbar">
+      <div class="wrap">
+        <a class="backlink" href="index.html#research"><svg class="ic"><use href="#i-back"/></svg> Back to research</a>
+      </div>
+    </div>
+  </main>
 
+  <footer class="site">
+    <div class="wrap">
+      <div class="cp">&copy; <span id="yr"></span> <b>Prabesh Bista</b>. All rights reserved.</div>
+      <div class="mono">Stony Brook, NY</div>
+    </div>
+  </footer>
 
-  </main><!-- End #main -->
-
-
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <button class="totop" id="toTop" aria-label="Back to top"><svg class="ic"><use href="#i-up"/></svg></button>
+  <script>
+  (function(){
+    "use strict";
+    var $=function(s,c){return (c||document).querySelector(s);};
+    var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+    $('#yr').textContent=new Date().getFullYear();
+    var nav=$('#nav'),mb=$('#menuBtn');
+    if(mb){mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);
+      mb.innerHTML=o?'<svg class="ic"><use href="#i-close"/></svg>':'<svg class="ic"><use href="#i-menu"/></svg>';});}
+    var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    $$('[data-reveal]').forEach(function(el){rev.observe(el);});
+    var track=$('#vtrack');
+    if(track){
+      var slides=$$('.vslide',track),dotsWrap=$('#dots'),i=0;
+      slides.forEach(function(_,k){var b=document.createElement('button');if(k===0)b.className='on';
+        b.setAttribute('aria-label','Go to image '+(k+1));
+        b.addEventListener('click',function(){track.scrollTo({left:track.clientWidth*k,behavior:'smooth'});});dotsWrap.appendChild(b);});
+      var dots=$$('button',dotsWrap);
+      function sync(){var k=Math.round(track.scrollLeft/track.clientWidth);if(k!==i){i=k;dots.forEach(function(d,j){d.classList.toggle('on',j===i);});}}
+      track.addEventListener('scroll',function(){window.requestAnimationFrame(sync);},{passive:true});
+      var pv=$('#vprev'),nx=$('#vnext');
+      if(pv)pv.addEventListener('click',function(){track.scrollTo({left:track.clientWidth*Math.max(0,i-1),behavior:'smooth'});});
+      if(nx)nx.addEventListener('click',function(){track.scrollTo({left:track.clientWidth*Math.min(slides.length-1,i+1),behavior:'smooth'});});
+      if(slides.length<2){if(pv)pv.style.display='none';if(nx)nx.style.display='none';dotsWrap.style.display='none';}
+    }
+    var tt=$('#toTop');var os=function(){tt.classList.toggle('show',window.scrollY>500);};
+    window.addEventListener('scroll',os,{passive:true});os();
+    tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  })();
+  </script>
 </body>
-
 </html>
