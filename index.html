@@ -31,7 +31,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>document.documentElement.className = 'js';</script>
 
@@ -54,9 +54,9 @@
       --shadow:0 1px 2px rgba(16,20,32,.05),0 10px 30px -16px rgba(16,20,32,.18);
       --shadow-lg:0 30px 70px -28px rgba(12,16,24,.5);
       --rail-w:300px; --maxw:900px;
-      --f-disp:'Space Grotesk',system-ui,sans-serif;
-      --f-body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
-      --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+      --f-disp:'Poppins',system-ui,sans-serif;
+      --f-body:'Open Sans',system-ui,-apple-system,sans-serif;
+      --f-mono:'Raleway',system-ui,sans-serif;
       --ease:cubic-bezier(.22,.61,.36,1);
     }
     *{box-sizing:border-box}
@@ -103,6 +103,7 @@
       color:var(--rail-tx);background:rgba(255,255,255,.05);border:1px solid var(--line-dark);
       font-size:16px;transition:.22s var(--ease)}
     .socials a:hover{color:#fff;background:rgba(122,92,255,.22);border-color:rgba(122,92,255,.6);transform:translateY(-2px)}
+    .nav-socials{display:none}
 
     .nav{margin-top:30px}
     .nav ul{list-style:none;margin:0;padding:0}
@@ -145,7 +146,7 @@
       font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);
       padding:7px 14px;border:1px solid var(--line-dark);border-radius:100px;background:rgba(255,255,255,.03);margin-bottom:26px}
     .hero .tag .live{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 10px 1px rgba(34,199,230,.9);animation:pulse 2.4s var(--ease) infinite}
-    .hero h1{font-size:clamp(46px,8.5vw,86px);font-weight:700;letter-spacing:-.045em;line-height:.98;color:#fff}
+    .hero h1{font-size:clamp(46px,8.5vw,84px);font-weight:700;letter-spacing:-.02em;line-height:.98;color:#fff}
     .hero .role{font-size:clamp(19px,2.6vw,26px);font-weight:500;margin:20px 0 0;color:#dfe4ee;font-family:var(--f-disp);letter-spacing:-.01em;min-height:1.3em}
     .hero .role .typed{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .hero .caret{display:inline-block;width:2px;height:1em;background:var(--accent-2);margin-left:2px;vertical-align:-.15em;animation:blink 1s steps(2) infinite}
@@ -254,6 +255,11 @@
     .pub .au b{color:var(--text)}
     .pub .ref{font-family:var(--f-mono);font-size:12.5px;color:var(--muted-2)}
     .pub .ref b{color:var(--accent);font-weight:500}
+    .pub .doi{display:inline-flex;align-items:center;gap:7px;margin-top:13px;font-family:var(--f-mono);
+      font-size:12.5px;color:var(--accent);background:rgba(122,92,255,.07);border:1px solid var(--line);
+      padding:6px 12px;border-radius:8px;transition:.2s var(--ease)}
+    .pub .doi:hover{color:var(--violet);border-color:rgba(122,92,255,.5);background:rgba(122,92,255,.13)}
+    .pub .doi .ic{font-size:14px;color:var(--accent)}
 
     /* ---------- gallery ---------- */
     .carousel{position:relative}
@@ -337,6 +343,10 @@
       .avatar{width:46px;height:46px;padding:2px}.avatar img{border-width:2px}
       .brand h1{margin:0;font-size:18px}.brand .kicker{display:none}
       .socials{display:none}
+      .nav-socials{display:flex;gap:10px;padding:16px 12px 6px;margin-top:8px;border-top:1px solid var(--line-dark)}
+      .nav-socials a{width:42px;height:42px;display:grid;place-items:center;border-radius:11px;color:var(--rail-tx);
+        background:rgba(255,255,255,.05);border:1px solid var(--line-dark);font-size:18px;transition:.2s var(--ease)}
+      .nav-socials a:hover,.nav-socials a:active{color:#fff;background:rgba(122,92,255,.22);border-color:rgba(122,92,255,.6)}
       .nav{position:fixed;inset:66px 0 auto 0;margin:0;background:var(--ink);padding:14px 20px 22px;
         border-bottom:1px solid var(--line-dark);transform:translateY(-140%);transition:transform .4s var(--ease);max-height:80vh;overflow:auto}
       .nav.open{transform:none}
@@ -391,6 +401,7 @@
     <symbol id="i-chevL" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
     <symbol id="i-chevR" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
     <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M14 3v5h5M15 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-4-5Z"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M20 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4"/></symbol>
   </svg>
 
   <!-- ======= Rail ======= -->
@@ -418,6 +429,11 @@
         <li><a href="#gallery"><span class="dot"></span>Gallery</a></li>
         <li><a href="#contact"><span class="dot"></span>Contact</a></li>
       </ul>
+      <div class="nav-socials">
+        <a href="https://twitter.com/prabeshbista4" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><svg class="ic"><use href="#i-x"/></svg></a>
+        <a href="https://www.linkedin.com/in/prabesh-bista-869678132/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/prabeshbista" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+      </div>
     </nav>
 
     <div class="rail-foot">
@@ -475,16 +491,15 @@
             <img src="assets/img/mypic1.jpg" alt="Prabesh Bista in the lab" loading="lazy" decoding="async">
           </div>
           <div class="about-body" data-reveal>
-            <div class="lede-mono">My Story</div>
-            <h3>From Kathmandu to the lab bench</h3>
+            <h3>My Story</h3>
             <p>
               <strong>From Kathmandu to the lab bench.</strong> I grew up in Kathmandu, Nepal, and completed my undergraduate degree in Physics at Tribhuvan University. That path led me to Taiwan, where an internship turned into a year as a Research Assistant — and later a master's thesis — in <a href="https://www.iams.sinica.edu.tw/en/?link=member&id=60" target="_blank" rel="noopener noreferrer">Dr. Cheng-Tien Chiang's lab</a> at Academia Sinica. There, I built a non-collinear optical parametric amplifier (NOPA) from scratch, engineering it into a working light source for photoelectron spectroscopy.
             </p>
             <p>
-              <strong>Now, at Stony Brook.</strong> I'm currently a PhD student in <a href="https://allisongroup.net/" target="_blank" rel="noopener noreferrer">Prof. Thomas Allison's lab</a>, where I design and build ultrafast experiments and turn the data they produce into physical insight.
+              <strong>Now, at Stony Brook.</strong> I'm currently a PhD student in <a href="https://allisongroup.net/" target="_blank" rel="noopener noreferrer">Prof. Thomas Allison's lab</a>, where I design and build ultrafast experiments and turn the data they produce into physical insight — work at the intersection of instrumentation and discovery.
             </p>
             <p>
-              Outside the lab, I read non-fiction and the news, hike, play football, cycle, and travel.
+              Outside the lab, I read non-fiction and the news, hike, play football, cycle, travel, and cook — the same curiosity that shows up in the lab too.
             </p>
           </div>
         </div>
@@ -549,7 +564,7 @@
               <span class="when">October 2025 – May 2026</span>
               <p class="where"><em><a href="https://spqm.pages.ist.ac.at/" target="_blank" rel="noopener noreferrer">Sunko Group</a>, Institute of Science and Technology Austria, Klosterneuburg, Austria</em></p>
               <ul>
-                <li>Built an optical setup for time-resolved magneto-optical Kerr effect measurements.</li>
+                <li>Building an optical setup for time-resolved magneto-optical Kerr effect measurements.</li>
               </ul>
               <span class="when">December 2024 – May 2025</span>
               <p class="where"><em><a href="https://ultrafast.pages.ist.ac.at/" target="_blank" rel="noopener noreferrer">Baykusheva Group</a>, Institute of Science and Technology Austria, Klosterneuburg, Austria</em></p>
@@ -657,17 +672,19 @@
           <article class="pub" data-reveal>
             <div class="yr">2026</div>
             <div>
-              <p class="t"><a href="https://pubs.aip.org/aip/apl/article/128/3/031601/3377623/Valence-band-momentum-imaging-of-NiTe2-by-two" target="_blank" rel="noopener noreferrer">Valence Band Momentum Imaging of NiTe<sub>2</sub> by Two-Photon Photoemission Momentum Microscopy</a></p>
+              <p class="t"><a href="https://doi.org/10.1063/5.0300775" target="_blank" rel="noopener noreferrer">Valence Band Momentum Imaging of NiTe<sub>2</sub> by Two-Photon Photoemission Momentum Microscopy</a></p>
               <p class="au">Mukesh Singh, <b>Prabesh Bista</b>, Yu-Chan Lin, Chia-Nung Kuo, Yu-Jhen Chuang, Maximilian Paleschke, Chen-Bin Huang, Ming-Chiang Chung, Chin-Shan Lue, and Cheng-Tien Chiang</p>
               <p class="ref">Appl. Phys. Lett., <b>128</b>, 031601, 2026</p>
+              <a class="doi" href="https://doi.org/10.1063/5.0300775" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-ext"/></svg> doi.org/10.1063/5.0300775</a>
             </div>
           </article>
           <article class="pub" data-reveal>
             <div class="yr">2022</div>
             <div>
-              <p class="t"><a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03064" target="_blank" rel="noopener noreferrer">Photoluminescence of Nitrogen-Vacancy Centers by Ultraviolet One- and Two-Photon Excitation of Fluorescent Nanodiamonds</a></p>
+              <p class="t"><a href="https://doi.org/10.1021/acs.jpclett.2c03064" target="_blank" rel="noopener noreferrer">Photoluminescence of Nitrogen-Vacancy Centers by Ultraviolet One- and Two-Photon Excitation of Fluorescent Nanodiamonds</a></p>
               <p class="au">Teng-I Yang, Yu-Wen Huang, <b>Prabesh Bista</b>, Chien-Fang Ding, Jeson Chen, Cheng-Tien Chiang, and Huan-Cheng Chang</p>
               <p class="ref">J. Phys. Chem. Lett., <b>13</b>, 11280–11287, 2022</p>
+              <a class="doi" href="https://doi.org/10.1021/acs.jpclett.2c03064" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-ext"/></svg> doi.org/10.1021/acs.jpclett.2c03064</a>
             </div>
           </article>
         </div>
